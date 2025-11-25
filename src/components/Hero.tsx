@@ -5,6 +5,16 @@ import Icon from '@/components/ui/icon';
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
+  const scrollToExperiments = () => {
+    const element = document.getElementById('experiments');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToEffects = () => {
+    const element = document.getElementById('effects');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -110,11 +120,11 @@ const Hero = () => {
         </p>
         
         <div className="flex gap-4 justify-center flex-wrap">
-          <Button size="lg" className="gap-2 text-lg px-8 animate-pulse-color">
+          <Button size="lg" className="gap-2 text-lg px-8 animate-pulse-color" onClick={scrollToExperiments}>
             <Icon name="Play" size={24} />
             Начать исследование
           </Button>
-          <Button size="lg" variant="outline" className="gap-2 text-lg px-8">
+          <Button size="lg" variant="outline" className="gap-2 text-lg px-8" onClick={scrollToEffects}>
             <Icon name="Rocket" size={24} />
             Смотреть демо
           </Button>
